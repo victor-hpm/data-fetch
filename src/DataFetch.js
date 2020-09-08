@@ -31,7 +31,7 @@ export class DataFetch extends LitElement {
                 this.infoapi = response.results;
                 // console.log('infoapi', this.infoapi);
                 this.mapeo();
-                // console.log('data', this.data);
+                console.log('data', this.data);
             });
         this.dispatchEvent(new CustomEvent('info', { detail: this.data }));
     }
@@ -40,7 +40,7 @@ export class DataFetch extends LitElement {
         this.infoapi.forEach((cartoon) => {
             this.data.push({
                 image: cartoon.image,
-                index: cartoon.id,
+                id: cartoon.id,
                 name: cartoon.name,
                 gender: cartoon.gender,
                 location: cartoon.location.name
